@@ -3,6 +3,7 @@
 ## usage
 
 ```bash
-cd build && cmake .. -G "Unix Makefiles" && make  # compile
-../bin/main.exe  # run
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+./bin/main.bin
 ```
