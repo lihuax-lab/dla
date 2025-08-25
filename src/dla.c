@@ -1,10 +1,11 @@
 #include "../include/dla.h"
+#include "header.h"
 
 // 定义网格，0 表示空，1 表示粒子
 int grid[GRID_SIZE][GRID_SIZE] = {0};
 
 // 初始化中心种子
-void init_grid() { grid[GRID_SIZE / 2][GRID_SIZE / 2] = 1; }
+void init_grid(void) { grid[GRID_SIZE / 2][GRID_SIZE / 2] = 1; }
 
 // 检查粒子是否在边界外
 int is_out_of_bounds(int x, int y) {
@@ -27,7 +28,7 @@ int is_touching_particle(int x, int y) {
 }
 
 // 随机生成粒子的初始位置
-Particle generate_particle() {
+Particle generate_particle(void) {
   Particle p;
   int edge = rand() % 4; // 随机选择边界
   if (edge == 0) {       // 上边
@@ -84,7 +85,7 @@ void walk_particle(Particle *p) {
 }
 
 // 打印网格
-void print_grid() {
+void print_grid(void) {
   for (int y = 0; y < GRID_SIZE; y++) {
     for (int x = 0; x < GRID_SIZE; x++) {
       printf(grid[x][y] ? "#" : ".");

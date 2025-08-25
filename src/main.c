@@ -1,7 +1,7 @@
 #include "../include/dla.h"
 #include "../include/header.h"
 
-int main() {
+int main(void) {
   srand(time(NULL));
   init_grid();
 
